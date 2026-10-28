@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShopEasy - E-Commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { margin:0; font-family: Arial; }
+
+/* HEADER */
+header {
+    background:#131921;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+}
+
+.logo { font-size:22px; font-weight:bold; }
+
+.search-bar {
+    width:40%;
+    padding:8px;
+}
+
+.nav-icons span {
+    margin-left:15px;
+    cursor:pointer;
+}
+
+/* NAV */
+nav {
+    background:#232f3e;
+    padding:10px;
+    text-align:center;
+}
+
+nav span {
+    color:white;
+    margin:0 15px;
+    cursor:pointer;
+}
+
+/* PRODUCTS */
+.products {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+.product {
+    border:1px solid #ddd;
+    width:200px;
+    padding:10px;
+    text-align:center;
+}
+
+.product img { width:100%; }
+
+button {
+    background:orange;
+    border:none;
+    padding:8px;
+    cursor:pointer;
+}
+
+/* LOGIN */
+#loginPage {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f3f3f3;
+}
+
+.login-box {
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:8px;
+}
+
+/* HIDE SECTIONS */
+.page { display:none; }
+
+.active { display:block; }
+
+.section-title {
+    text-align:center;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage">
+    <div class="login-box">
+        <h2>Welcome to ShopEasy</h2>
+        <p>Enter Mobile Number</p>
+        <input type="tel" id="mobile" placeholder="Enter Mobile Number"><br><br>
+        <button onclick="login()">Continue</button>
+    </div>
+</div>
+
+<!-- MAIN WEBSITE -->
+<div id="mainSite" style="display:none;">
+
+<header>
+    <div class="logo">ShopEasy</div>
+    <input type="text" class="search-bar" placeholder="Search products..." onkeyup="searchProduct(this.value)">
+    <div class="nav-icons">
+        <span onclick="showPage('orders')">📦 Orders</span>
+        <span onclick="showPage('cart')">🛒 Cart</span>
+    </div>
+</header>
+
+<nav>
+    <span onclick="showPage('home')">Home</span>
+    <span onclick="filterCategory('Electronics')">Electronics</span>
+    <span onclick="filterCategory('Fashion')">Fashion</span>
+    <span onclick="filterCategory('Mobiles')">Mobiles</span>
+    <span onclick="filterCategory('Laptops')">Laptops</span>
+    <span onclick="filterCategory('Shoes')">Shoes</span>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="home" class="page active">
+    <h2 class="section-title">All Products</h2>
+    <div class="products" id="productList">
+
+        <!-- 10 PRODUCTS -->
+        <div class="product" data-name="Smartphone" data-category="Mobiles">
+            <img src="https://via.placeholder.com/200">
+            <h4>Smartphone</h4>
+            <p>₹15,999</p>
+            <button onclick="addToCart('Smartphone')">Add to Cart</button>
+        </div>
+
+        <div class="product" data-name="Laptop" data-category="Laptops">
+            <img src="https://via.placeholder.com/200">
+            <h4>Laptop</h4>
+            <p>₹55,999</p>
+            <button onclick="addToCart('Laptop')">Add to Cart</button>
+        </div>
+
+        <div class="product" data-name="Headphones" data-category="Electronics">
+            <img src="https://via.placeholder.com/200">
+            <h4>Headphones</h4>
+            <p>₹2,499</p>
+            <button onclick="addToCart('Headphones')">Add to Cart</button>
+        </div>
+
+        <div class="product" data-name="Smart TV" data-category="Electronics">
+            <img src="https://via.placeholder.com/200">
+            <h4>Smart TV</h4>
+            <p>₹35,000</p>
+            <button onclick="addToCart('Smart TV')">Add to Cart</button>
+        </div>
+
+        <div class="product" data-name="Men T-Shirt" data-category="Fashion">
+            <img src="https://via.placeholder.com/200">
+            <h4>Men T-Shirt</h4>
+            <p>₹799</p>
+            <button onclick="addToCart('Men T-Shirt')">Add to Cart</button>
+        </div>
+
+        <div class="product" data-name="Women Dress" data-category="Fashion">
+            <img src="https://via.placeholder.com/200">
+            <h4>Women Dress</h4>
+            <p>₹1,299</p>
+            <button onclick="addToCart('Women Dress')">Add to Cart</button>
+        </div>
+
+        <div class="product" data-name="Running Shoes" data-category="Shoes">
+            <img src="https://via.placeholder.com/200">
+            <h4>Running Shoes</h4>
+            <p>₹1,999</p>
+            <button onclick="addToCart('Running Shoes')">Add to Cart</button>
+        </div>
+
+        <div class="product" data-name="Casual Shoes" data-category="Shoes">
+            <img src="https://via.placeholder.com/200">
+            <h4>Casual Shoes</h4>
+            <p>₹1,499</p>
+            <button onclick="addToCart('Casual Shoes')">Add to Cart</button>
+        </div>
+
+        <div class="product" data-name="Tablet" data-category="Electronics">
+            <img src="https://via.placeholder.com/200">
+            <h4>Tablet</h4>
+            <p>₹20,000</p>
+            <button onclick="addToCart('Tablet')">Add to Cart</button>
+        </div>
+
+        <div class="product" data-name="Gaming Laptop" data-category="Laptops">
+            <img src="https://via.placeholder.com/200">
+            <h4>Gaming Laptop</h4>
+            <p>₹85,000</p>
+            <button onclick="addToCart('Gaming Laptop')">Add to Cart</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- CART PAGE -->
+<div id="cart" class="page">
+    <h2 class="section-title">Your Cart</h2>
+    <div id="cartItems" style="text-align:center;"></div>
+</div>
+
+<!-- ORDERS PAGE -->
+<div id="orders" class="page">
+    <h2 class="section-title">Your Orders</h2>
+    <div style="text-align:center;">
+        <p>📦 Order #12345 - Smartphone - Delivered</p>
+        <p>📦 Order #67890 - Laptop - Shipped</p>
+    </div>
+</div>
+
+</div>
+
+<script>
+let cart = [];
+
+function login() {
+    let mobile = document.getElementById("mobile").value;
+    if(mobile.length >= 10) {
+        document.getElementById("loginPage").style.display="none";
+        document.getElementById("mainSite").style.display="block";
+    } else {
+        alert("Enter valid mobile number");
+    }
+}
+
+function showPage(page) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById(page).classList.add("active");
+}
+
+function addToCart(item) {
+    cart.push(item);
+    alert(item + " added to cart");
+    displayCart();
+}
+
+function displayCart() {
+    let cartBox = document.getElementById("cartItems");
+    cartBox.innerHTML = "";
+    cart.forEach(item => {
+        cartBox.innerHTML += "<p>" + item + "</p>";
+    });
+}
+
+function searchProduct(value) {
+    let products = document.querySelectorAll(".product");
+    products.forEach(p => {
+        let name = p.getAttribute("data-name").toLowerCase();
+        if(name.includes(value.toLowerCase()))
+            p.style.display="block";
+        else
+            p.style.display="none";
+    });
+}
+
+function filterCategory(category) {
+    showPage("home");
+    let products = document.querySelectorAll(".product");
+    products.forEach(p => {
+        if(p.getAttribute("data-category") == category)
+            p.style.display="block";
+        else
+            p.style.display="none";
+    });
+}
+</script>
+
+</body>
+</html>

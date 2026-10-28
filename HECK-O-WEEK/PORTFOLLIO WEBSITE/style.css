@@ -1,0 +1,233 @@
+/* =======================
+   GLOBAL RESET
+   ======================= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.3s ease;
+}
+
+/* =======================
+   BODY
+   ======================= */
+body{
+    background-color: #ffd59b;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =======================
+   HEADER
+   ======================= */
+header{
+    background: linear-gradient(135deg, #ff9d00, #5f2cff);
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+header h1{
+    font-size: 2.5rem;
+}
+
+header p{
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+header:hover{
+    box-shadow: 0 0 25px rgba(0,60,255,0.6);
+}
+
+/* =======================
+   PROFILE IMAGE
+   ======================= */
+.profile-photo{
+    width: 150px;          /* limited size */
+    height: 150px;         /* same as width */
+    border-radius: 50%;    /* perfect circle */
+    object-fit: cover;     /* crop image properly */
+    border: 4px solid #fff;
+    margin-top: 15px;
+    box-shadow: 0 0 15px rgba(153, 132, 132, 0.3);
+}
+
+
+
+/* =======================
+   NAVBAR
+   ======================= */
+nav{
+    background: #3c00ff;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+nav a{
+    margin: 0 15px;
+    color: #fff;
+    padding: 15px 20px;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+}
+
+/* Animated underline */
+nav a::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: red;
+    left: 0;
+    bottom: 5px;
+}
+
+nav a:hover::after{
+    width: 100%;
+}
+
+nav a:hover{
+    color: #ffb3b3;
+}
+
+/* =======================
+   SECTIONS
+   ======================= */
+section{
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+section h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #0d6efd;
+    position: relative;
+}
+
+section h2::after{
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #0d6efd;
+    display: block;
+    margin: 10px auto 0;
+}
+
+section p{
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* =======================
+   BUTTON
+   ======================= */
+section button{
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 12px;
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+section button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(13,110,253,0.8);
+}
+
+/* =======================
+   SKILLS SECTION
+   ======================= */
+.Skills{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.skill-card{
+    background: rgba(5,5,178,0.85);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.skill-card h3{
+    color: #fff;
+}
+
+.skill-card:hover{
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(5,5,178,0.6);
+}
+
+/* =======================
+   PROJECTS SECTION
+   ======================= */
+.projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card{
+    background: #0505b2ec;
+    padding: 25px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card h3,
+.project-card p{
+    color: #fff;
+}
+
+.project-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* =======================
+   CONTACT
+   ======================= */
+.contact{
+    text-align: center;
+}
+
+.contact p{
+    margin: 10px 0;
+}
+
+/* =======================
+   FOOTER
+   ======================= */
+.footer{
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* =======================
+   RESPONSIVE
+   ======================= */
+@media(max-width:600px){
+    header h1{
+        font-size: 2rem;
+    }
+}

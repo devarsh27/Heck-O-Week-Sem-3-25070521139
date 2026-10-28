@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nashtaa.com | Shudh Desi Nashta</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-top-view-of-a-delicious-breakfast-dish-with-eggs-13045-large.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="logo">🍽️ Nashtaa<span>.com</span></div>
+        <div class="nav-right">
+            <span id="user-display">Welcome, Guest</span>
+            <button class="icon-btn" onclick="toggleCart()"><i class="fas fa-shopping-basket"></i> <span id="cart-count">0</span></button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="glass-panel">
+            <h1>Shudh Desi Nashta</h1>
+            <p>30+ Traditional Indian Breakfasts Delivered Hot</p>
+            <div class="hunger-slider">
+                <label>How hungry are you? <span id="h-val">50</span>%</label>
+                <input type="range" id="hunger" min="0" max="100" value="50">
+            </div>
+        </div>
+    </header>
+
+    <div class="filter-bar glass-panel">
+        <button class="filter-btn active" data-cat="All">All Items</button>
+        <button class="filter-btn" data-cat="South">South Indian</button>
+        <button class="filter-btn" data-cat="North">North Indian</button>
+        <button class="filter-btn" data-cat="Street">Street Special</button>
+        <button class="filter-btn" data-cat="Healthy">Healthy Nashta</button>
+    </div>
+
+    <main id="menu-grid" class="product-grid">
+        </main>
+
+    <div id="cart-drawer" class="glass-sidebar">
+        <button class="close-btn" onclick="toggleCart()">&times;</button>
+        <h2>Your Basket</h2>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <h3>Total: ₹<span id="total-price">0</span></h3>
+            <button class="pay-btn" onclick="processOrder()">Order Now</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div id="tracking-modal" class="modal hidden">
+    <div class="glass-panel tracking-card">
+        <h2>🚚 Live Tracking</h2>
+        <p>Order #NST-9921 is being prepared</p>
+        
+        <div class="tracking-container">
+            <div class="step" id="step1">
+                <div class="circle"><i class="fas fa-check"></i></div>
+                <div class="label">Order Confirmed</div>
+            </div>
+            <div class="step" id="step2">
+                <div class="circle"><i class="fas fa-fire"></i></div>
+                <div class="label">Chef is Cooking</div>
+            </div>
+            <div class="step" id="step3">
+                <div class="circle"><i class="fas fa-motorcycle"></i></div>
+                <div class="label">Out for Delivery</div>
+            </div>
+            <div class="step" id="step4">
+                <div class="circle"><i class="fas fa-home"></i></div>
+                <div class="label">Delivered</div>
+            </div>
+        </div>
+        <button class="btn-add" onclick="document.getElementById('tracking-modal').classList.add('hidden')">Close</button>
+    </div>
+</div>
+</body>
+</html>

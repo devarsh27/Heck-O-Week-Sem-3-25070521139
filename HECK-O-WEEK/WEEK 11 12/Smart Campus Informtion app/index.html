@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus360 | SIT Nagpur</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">C</div>
+
+                <div>
+                    <h2>Campus360</h2>
+                    <p>Student Information Portal</p>
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <a href="#dashboard" class="nav-link active">🏠 Dashboard</a>
+                <a href="#announcements" class="nav-link">📢 Announcements</a>
+                <a href="#events" class="nav-link">🎉 Campus Events</a>
+                <a href="#resources" class="nav-link">📚 Academic Resources</a>
+                <a href="#about" class="nav-link">ℹ️ About Us</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Made for students</p>
+                <strong>SIT Nagpur</strong>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">STUDENT PORTAL</p>
+                    <h1>Welcome to Campus360 👋</h1>
+                    <p class="muted">
+                        Your campus information, all in one place.
+                    </p>
+                </div>
+
+                <button id="refreshButton" class="secondary-button">
+                    ↻ Refresh Information
+                </button>
+            </header>
+
+            <!-- Dashboard -->
+            <section id="dashboard" class="hero">
+                <div class="hero-content">
+                    <span class="hero-label">YOUR CAMPUS. YOUR COMMUNITY.</span>
+
+                    <h2>Discover Your Campus Experience</h2>
+
+                    <p>
+                        Stay informed about campus announcements, academic
+                        resources, sports competitions, cultural festivals,
+                        and technical activities.
+                    </p>
+
+                    <a href="#events" class="primary-button">
+                        Explore Campus Events →
+                    </a>
+                </div>
+
+                <div class="hero-decoration">
+                    <div class="circle circle-one"></div>
+                    <div class="circle circle-two"></div>
+                    <div class="hero-symbol">🎓</div>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-icon purple">📢</div>
+                    <p>Announcements</p>
+                    <h3 id="announcementCount">0</h3>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon orange">🎉</div>
+                    <p>Campus Events</p>
+                    <h3 id="eventCount">0</h3>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon green">📚</div>
+                    <p>Academic Resources</p>
+                    <h3 id="resourceCount">0</h3>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon blue">🔖</div>
+                    <p>Saved Information</p>
+                    <h3 id="savedCount">0</h3>
+                </article>
+            </section>
+
+            <!-- Announcements -->
+            <section id="announcements" class="section">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">STAY UPDATED</p>
+                        <h2>Campus Announcements</h2>
+                        <p class="muted">
+                            Search and explore campus information.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="filter-bar">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search announcements and events..."
+                        aria-label="Search campus information"
+                    >
+
+                    <select id="categoryFilter" aria-label="Filter by category">
+                        <option value="All">All Categories</option>
+                        <option value="Events">Events</option>
+                        <option value="Academic">Academic</option>
+                        <option value="Campus">Campus</option>
+                    </select>
+                </div>
+
+                <div id="informationContainer" class="information-grid">
+                    <p class="loading-message">Loading campus information...</p>
+                </div>
+
+                <p id="emptyMessage" class="empty-message hidden">
+                    No information matches your search.
+                </p>
+
+                <div class="center">
+                    <button id="showMoreButton" class="secondary-button hidden">
+                        Show More
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Campus Events -->
+            <section id="events" class="section">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">CAMPUS LIFE</p>
+                        <h2>Campus Events & Activities</h2>
+
+                        <p class="muted">
+                            Explore sports, cultural celebrations,
+                            technical activities, and student initiatives.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="activities-grid">
+
+                    <article class="activity-card sports-card">
+                        <div class="activity-icon">🏆</div>
+                        <span class="badge">Sports</span>
+
+                        <h3>Sports Spectra</h3>
+
+                        <p>
+                            Explore sporting competitions, team events,
+                            athletic activities, and opportunities for
+                            students to demonstrate their sporting skills.
+                        </p>
+
+                        <div class="activity-footer">
+                            Sports & Competition
+                        </div>
+                    </article>
+
+                    <article class="activity-card cultural-card">
+                        <div class="activity-icon">🎭</div>
+                        <span class="badge">Cultural</span>
+
+                        <h3>Enthusia</h3>
+
+                        <p>
+                            Discover cultural performances, music,
+                            dance, creative activities, and opportunities
+                            for students to showcase their talent.
+                        </p>
+
+                        <div class="activity-footer">
+                            Culture & Creativity
+                        </div>
+                    </article>
+
+                    <article class="activity-card technical-card">
+                        <div class="activity-icon">💻</div>
+                        <span class="badge">Technical</span>
+
+                        <h3>ICSIT</h3>
+
+                        <p>
+                            Explore technology-related activities,
+                            technical knowledge-sharing, and research
+                            opportunities associated with ICSIT.
+                        </p>
+
+                        <div class="activity-footer">
+                            Technology & Innovation
+                        </div>
+                    </article>
+
+                    <article class="activity-card hackathon-card">
+                        <div class="activity-icon">🚀</div>
+                        <span class="badge">Innovation</span>
+
+                        <h3>Student Hackathons</h3>
+
+                        <p>
+                            Collaborate with teammates, solve problems,
+                            develop prototypes, and transform creative
+                            ideas into working projects.
+                        </p>
+
+                        <div class="activity-footer">
+                            Coding & Problem Solving
+                        </div>
+                    </article>
+
+                    <article class="activity-card startup-card">
+                        <div class="activity-icon">💡</div>
+                        <span class="badge">Entrepreneurship</span>
+
+                        <h3>Startup Activities</h3>
+
+                        <p>
+                            Explore business ideas, develop startup
+                            concepts, participate in pitching activities,
+                            and learn about entrepreneurship.
+                        </p>
+
+                        <div class="activity-footer">
+                            Startups & Business
+                        </div>
+                    </article>
+
+                    <article class="activity-card clubs-card">
+                        <div class="activity-icon">🤝</div>
+                        <span class="badge">Community</span>
+
+                        <h3>Student Clubs & Workshops</h3>
+
+                        <p>
+                            Discover student communities, workshops,
+                            creative activities, competitions, and
+                            opportunities for collaboration.
+                        </p>
+
+                        <div class="activity-footer">
+                            Clubs & Community
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="disclaimer">
+                    Note: Event descriptions are informational examples.
+                    Please verify official event dates, schedules,
+                    and registrations with the institute.
+                </p>
+
+            </section>
+
+            <!-- Academic Resources -->
+            <section id="resources" class="section">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">LEARN & GROW</p>
+                        <h2>Academic Resources</h2>
+                        <p class="muted">
+                            Helpful links for students and developers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="resources-grid">
+
+                    <a
+                        class="resource-card"
+                        href="https://www.sitnagpur.edu.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div class="resource-icon">🏫</div>
+                        <div>
+                            <h3>SIT Nagpur</h3>
+                            <p>Visit the institute's official website.</p>
+                        </div>
+                        <span>↗</span>
+                    </a>
+
+                    <a
+                        class="resource-card"
+                        href="https://www.siu.edu.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div class="resource-icon">🎓</div>
+                        <div>
+                            <h3>Symbiosis International University</h3>
+                            <p>Explore university information.</p>
+                        </div>
+                        <span>↗</span>
+                    </a>
+
+                    <a
+                        class="resource-card"
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div class="resource-icon">💻</div>
+                        <div>
+                            <h3>JavaScript Learning</h3>
+                            <p>Learn JavaScript and web development.</p>
+                        </div>
+                        <span>↗</span>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- About -->
+            <section id="about" class="section about-section">
+                <p class="eyebrow">ABOUT THE PROJECT</p>
+                <h2>One Portal. Better Campus Awareness.</h2>
+
+                <p>
+                    Campus360 is a student information portal concept
+                    designed to organize campus announcements, academic
+                    resources, and student activities in one accessible
+                    interface.
+                </p>
+
+                <p>
+                    The project demonstrates HTML, CSS, JavaScript,
+                    asynchronous programming, browser events, API
+                    integration, and local storage.
+                </p>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© 2026 Campus360 | Student Information Portal</p>
+                <p>Designed for a better campus experience.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

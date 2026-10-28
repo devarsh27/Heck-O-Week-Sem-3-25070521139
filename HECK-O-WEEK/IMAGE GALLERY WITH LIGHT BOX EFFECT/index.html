@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Image Gallery</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="cursor-light"></div>
+    <video autoplay muted loop id="bg-video">
+<source src="https://www.vecteezy.com/video/4915881-4k-timelapse-sequence-of-toronto-canada-the-financial-district-of-toronto-during-the-blue-hour">
+</video>
+
+<div class="title-box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" class="mascot">
+
+<h1 class="gold-heading">✨ Creative Photo Gallery ✨</h1>
+
+</div>
+
+<img src="https://picsum.photos/500?random=1" onclick="openLightbox(0)">
+<img src="https://picsum.photos/500?random=2" onclick="openLightbox(1)">
+<img src="https://picsum.photos/500?random=3" onclick="openLightbox(2)">
+
+<img src="https://picsum.photos/500?random=4" onclick="openLightbox(3)">
+<img src="https://picsum.photos/500?random=5" onclick="openLightbox(4)">
+<img src="https://picsum.photos/500?random=6" onclick="openLightbox(5)">
+
+<img src="https://picsum.photos/500?random=7" onclick="openLightbox(6)">
+<img src="https://picsum.photos/500?random=8" onclick="openLightbox(7)">
+<img src="https://picsum.photos/500?random=9" onclick="openLightbox(8)">
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<span class="close" onclick="closeLightbox()">×</span>
+
+<span class="nav prev" onclick="changeSlide(-1)">❮</span>
+
+<img id="lightbox-img">
+
+<span class="nav next" onclick="changeSlide(1)">❯</span>
+
+<div class="caption" id="caption"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+<footer class="footer">
+MADE BY GROUP 43
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Explorer with E-Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="default-theme">
+    <header>
+        <h1><i class="fas fa-cloud-sun"></i> Weather Explorer</h1>
+        <p>Click cities to explore weather! Chat with E-Bot for forecasts &amp; motivation 🌟</p>
+    </header>
+
+    <main class="cities-container">
+        <div class="weather-card" data-city="newyork" data-condition="sunny">
+            <i class="fas fa-sun condition-icon"></i>
+            <h2>New York</h2>
+            <p class="temp">25°C</p>
+            <p class="description">Sunny</p>
+            <button class="explore-btn">Explore</button>
+        </div>
+
+        <div class="weather-card" data-city="london" data-condition="rainy">
+            <i class="fas fa-cloud-rain condition-icon"></i>
+            <h2>London</h2>
+            <p class="temp">15°C</p>
+            <p class="description">Rainy</p>
+            <button class="explore-btn">Explore</button>
+        </div>
+
+        <div class="weather-card" data-city="tokyo" data-condition="cloudy">
+            <i class="fas fa-cloud condition-icon"></i>
+            <h2>Tokyo</h2>
+            <p class="temp">20°C</p>
+            <p class="description">Cloudy</p>
+            <button class="explore-btn">Explore</button>
+        </div>
+    </main>
+
+    <!-- Forecast Popup -->
+    <div id="forecast-popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h3 id="popup-city"></h3>
+            <p id="popup-forecast"></p>
+        </div>
+    </div>
+
+    <!-- Responsive E-Bot -->
+    <div id="e-bot" class="e-bot-closed">
+        <div class="e-bot-header">
+            <i class="fas fa-robot"></i>
+            <span>E-Weather Bot</span>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="e-bot-body hidden">
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <strong>E-Bot:</strong> Hi explorer! 👋 Click cities to see weather. Ask me about "forecast", "history", or "motivate"! I&apos;ll track your adventure.
+                </div>
+            </div>
+            <div class="history-section hidden" id="history-section">
+                <h4><i class="fas fa-history"></i> Your Weather History</h4>
+                <div id="history-list"></div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Type message... (history, motivate, etc.)">
+                <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="history-toggle">
+                <button id="toggle-history"><i class="fas fa-list"></i> History</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+</head>
+
+<!--Body Block-->
+<body>
+
+   <header>
+      <img src="Devarsh images/devarshimage.jpg" alt="My Photo" class="profile-photo">
+      <h1> DEVARSH GUPTA</h1>
+      <p>Student | Web Development Enthusiast | Cybersecurity Learner</p>
+   </header>
+
+   <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+   </nav>
+
+ <!-- About Block-->
+   <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm Devarsh Gupta, a passionate student with a keen interest in web development and cybersecurity. I love creating dynamic and responsive websites and am constantly learning new technologies to enhance my skills.</p>
+      <div style="text-align: center;"><button onclick="ToggleAbout()"> Read More</div>
+   </section>
+
+   <section id="skills">
+      <h2>Skills</h2>
+      <div class="Skills">
+         <div class="skill-card"><h3>Cybersecurity Fundamentals</h3></div>
+         <div class="skill-card"><h3>HTML & CSS</h3></div>
+         
+         <div class="skill-card"><h3>C Programming</h3></div>
+         <div class="skill-card"><h3>Python Basics<h3></div>
+         <div class="skill-card"><h3>Problem Solving</h3></div>
+      </div>
+   </section>  
+   
+   <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="project-card">
+            <h3>Student Portfolio Website</h3>
+            <p>A responsive personal portfolio website using HTML and CSS.</p>
+        </div>
+        <div class="project-card">
+            <h3>Cybersecurity Awareness Website</h3>
+            <p>An educational website explaining basic cybersecurity concepts.</p>
+            
+        </div>
+        <div class="project-card">
+            <h3>Python Mini Games</h3>
+            <p>Simple logic-based games created using Python condition statements.</p>
+        </div>
+    </div>
+</section>
+   
+   <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact">
+         <p>Email: devarsh.gupta.batch2025@gmail.com</p>
+         <p>Phone: 1234567890</p>
+         <p>Location: India</p>
+         <p> <a href="https://github.com/repos?q=owner%3A%40me">GitHub </a></p>
+         <p> <a href="https://www.linkedin.com/in/devarsh-gupta-123456789/">Linkedin</a></p>
+      </div>
+      
+</section>
+
+<footer>
+      <script>
+         function ToggleAbout(){
+            const text = document.getElementById("about").getElementsByTagName("p")[0];
+            if(text.style.display === "none"){
+               text.style.display = "block";
+            } else {
+               text.style.display = "none";
+            }
+         }
+         document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e){
+               e.preventDefault();
+               document.querySelector(this.getAttribute('href')).scrollIntoView({
+                   behavior: 'smooth'
+               });
+             });
+         });
+            
+      </script>
+      <p>&copy; 2026 Devarsh Gupta | Student Portfolio</p>
+</footer>
+
+
+</body>
+</html>
